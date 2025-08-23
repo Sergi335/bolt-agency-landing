@@ -34,6 +34,10 @@ const t = getI18N({ currentLocale });
       <!-- Theme Toggle & CTA Button -->  
       <div class="hidden md:block">
         <div class="flex items-center space-x-4">
+          <select name="language" class="language-selector text-gray-900 dark:text-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 bg-transparent" value={currentLocale}>
+            <option value="en" selected={currentLocale === 'en'}>English</option>
+            <option value="es" selected={currentLocale === 'es'}>Español</option>
+          </select>
           <button onclick="toggleTheme()" class="p-2 rounded group transition-colors duration-200">
             <MoonIcon />
             <SunIcon />
@@ -93,5 +97,16 @@ document.addEventListener('DOMContentLoaded', function () {
       mobileMenu?.classList.add('hidden')
     })
   })
+})
+const selectLanguage = document.querySelector('.language-selector')
+selectLanguage?.addEventListener('change', (e) => {
+  const selectedLang = (e.target as HTMLSelectElement).value
+  const currentPath = window.location.pathname
+  const newPath = `/${selectedLang}${currentPath.substring(3)}`
+  if (newPath === '/es') {
+    window.location.href = '/'
+  } else {
+    window.location.href = newPath
+  }
 })
 </script>

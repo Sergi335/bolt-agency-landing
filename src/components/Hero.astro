@@ -9,18 +9,19 @@
         <div class="text-center lg:text-left">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
             Webs, AI & Marketing
-            <span class="text-primary-500">for your business</span>
+            <span class="herotitle_span">for your business</span>
           </h1>
-          <p class="mt-6 text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-            We create your website, boost your brand, and generate catalogs and media with AI.
+          <p class="mt-6 text-xl text-gray-600 dark:text-gray-300 leading-tight">
+            We create your website, boost your brand, and generate catalogs and media with AI
           </p>
           
           <!-- CTAs -->
           <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#contact" class="button font-semibold shadow-lg">
+            <div class={`button_backdrop absolute bg-accent rounded left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out`}></div>
+            <a href="#contact" class="button_transparent font-semibold shadow-lg z-10">
               Start your project
             </a>
-            <a href="#portfolio" class="button_outline font-semibold">
+            <a href="#portfolio" class="button_transparent font-semibold z-10">
               See portfolio
             </a>
           </div>
@@ -41,4 +42,30 @@
     background-size: 50px 50px;
     background-attachment: fixed;
   }
+  .herotitle_span {
+    background: -webkit-linear-gradient(#eee, #0d9488);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.button_transparent') as NodeListOf<HTMLElement>
+    const backdrop = document.querySelector('.button_backdrop') as HTMLElement
+    const { left, top, width, height } = buttons[0].getBoundingClientRect()
+    backdrop.style.setProperty('--left', `${left}px`)
+    backdrop.style.setProperty('--top', `${top}px`)
+    backdrop.style.setProperty('--width', `${width}px`)
+    backdrop.style.setProperty('--height', `${height}px`)
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', () => {
+        const { left, top, width, height } = button.getBoundingClientRect()
+        backdrop.style.setProperty('--left', `${left}px`)
+        backdrop.style.setProperty('--top', `${top}px`)
+        backdrop.style.setProperty('--width', `${width}px`)
+        backdrop.style.setProperty('--height', `${height}px`)
+      })
+    })
+  })
+</script>
