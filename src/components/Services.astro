@@ -1,0 +1,137 @@
+---
+import AnthropicIcon from "./icons/AnthropicIcon.astro"
+import GeminiIcon from "./icons/GeminiIcon.astro"
+import OpenAiIcon from "./icons/OpenAiIcon.astro"
+
+---
+
+<section id="services" class="py-20 bg-white dark:bg-primary transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Our Services
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        We combine cutting-edge technology with creative expertise to deliver comprehensive digital solutions
+      </p>
+    </div>
+
+    <!-- Highlight Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+      <!-- Web Creation -->
+      <div class="max-w-sm">
+          <a href="#">
+              <img class="rounded-t-lg object-cover aspect-video" src="/img2.png" alt="" />
+          </a>
+          <div class="p-5">
+              <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Web Creation</h5>
+              </a>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              <a href="#" class="button !inline-flex">
+                  Read more
+                  <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+              </a>
+          </div>
+      </div>
+
+      <!-- NEW CARD -->
+      <div class="max-w-sm">
+          <a href="#">
+              <img class="rounded-t-lg object-cover aspect-video" src="/img4.png" alt="" />
+          </a>
+          <div class="p-5">
+              <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">AI Media</h5>
+              </a>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              <div class="flex gap-4 justify-between items-center">
+                <a href="#" class="button !inline-flex">
+                    Read more
+                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+                <div class="flex gap-2">
+                  <OpenAiIcon class:list={["w-6 h-6"]} fill="currentColor" title="OpenAI" />
+                  <GeminiIcon class:list={["w-6 h-6"]} fill="currentColor" title="Google Gemini" />
+                  <AnthropicIcon class:list={["w-6 h-6"]} fill="currentColor" title="Anthropic" />
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Marketing -->
+      <div class="max-w-sm">
+          <a href="#">
+              <img class="rounded-t-lg object-cover aspect-video" src="/img3.png" alt="" />
+          </a>
+          <div class="p-5">
+              <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Marketing</h5>
+              </a>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              <a href="#" class="!inline-flex button">
+                  Read more
+                  <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+              </a>
+          </div>
+      </div>
+
+    </div>
+    <!-- Detailed Services Grid -->
+    <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> -->
+      <!-- Web Development -->
+      <!-- <div>
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-semibold text-gray-900 dark:text-white">Web Development</h4>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Clean websites, ecommerce platforms, and high-converting landing pages.</p>
+        <a href="#contact" class="text-primary-500 font-medium hover:text-primary-400 transition-colors duration-200">
+          Learn more →
+        </a>
+      </div> -->
+
+      <!-- AI Content -->
+      <!-- <div>
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-semibold text-gray-900 dark:text-white">AI Content</h4>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Chatbots, product images, and short-form videos powered by AI.</p>
+        <a href="#contact" class="text-primary-500 font-medium hover:text-primary-400 transition-colors duration-200">
+          Learn more →
+        </a>
+      </div> -->
+
+      <!-- Digital Marketing -->
+      <!-- <div>
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-semibold text-gray-900 dark:text-white">Digital Marketing</h4>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">SEO, email marketing, analytics, and social media strategies.</p>
+        <a href="#contact" class="text-primary-500 font-medium hover:text-primary-400 transition-colors duration-200">
+          Learn more →
+        </a>
+      </div>
+    </div> -->
+</section>

@@ -1,0 +1,82 @@
+---
+const {currentLocale} = Astro;
+---
+<!doctype html>
+<html lang={currentLocale} class="scroll-smooth dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<title>AI Web Studio - Web Creation, AI Media & Digital Marketing</title>
+		<meta name="description" content="We create websites, boost your brand, and generate catalogs and media with AI. Professional web development, AI-powered content, and digital marketing services.">
+	</head>
+	<body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+		<slot />
+		<script>
+			// Theme toggle functionality
+			function initTheme () {
+			  const theme = localStorage.getItem('theme') || 'dark'
+			  document.documentElement.classList.toggle('dark', theme === 'dark')
+			}
+
+			function toggleTheme () {
+			  const isDark = document.documentElement.classList.contains('dark')
+			  const newTheme = isDark ? 'light' : 'dark'
+			  document.documentElement.classList.toggle('dark', newTheme === 'dark')
+			  localStorage.setItem('theme', newTheme)
+			}
+
+			// Initialize theme on page load
+			initTheme()
+
+			// Make toggleTheme available globally
+			window.toggleTheme = toggleTheme
+		</script>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--color-accent: hsl(174.67deg 83.85% 31.57%);
+		/* --color-bg-dark: black;
+		--color-text: black;
+		--color-text-dark: white; */
+	}
+	.button {
+		background-color: var(--color-accent);
+		color: white;
+		border: none;
+		border-radius: 0.25rem;
+		padding: 0.5rem 1rem;
+		cursor: pointer;
+		transition: background-color 0.3s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.button_outline {
+		background-color: transparent;
+		border: 2px solid var(--color-accent);
+		border-radius: 0.25rem;
+		padding: 0.5rem 1rem;
+		cursor: pointer;
+		transition: background-color 0.3s, color 0.3s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	/* body {
+		background-color: var(--color-bg);
+		color: var(--color-text);
+		transition: background-color 0.3s, color 0.3s;
+	}
+
+	.dark body {
+		background-color: var(--color-bg-dark);
+		color: var(--color-text-dark);
+	} */
+</style>
