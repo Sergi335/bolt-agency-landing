@@ -16,8 +16,7 @@ const {currentLocale} = Astro;
 	</head>
 	<body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
 		<slot />
-		<script>
-			// Theme toggle functionality
+		<script type="module">
 			function initTheme () {
 			  const theme = localStorage.getItem('theme') || 'dark'
 			  document.documentElement.classList.toggle('dark', theme === 'dark')
@@ -30,11 +29,13 @@ const {currentLocale} = Astro;
 			  localStorage.setItem('theme', newTheme)
 			}
 
-			// Initialize theme on page load
+			// Inicializa el tema al cargar
 			initTheme()
 
-			// Make toggleTheme available globally
-			window.toggleTheme = toggleTheme
+			// Asigna el evento a un botón por selector
+			document.querySelectorAll('.theme-toggle').forEach(btn => {
+			  btn.addEventListener('click', toggleTheme)
+			})
 		</script>
 	</body>
 </html>
@@ -42,6 +43,7 @@ const {currentLocale} = Astro;
 <style is:global>
 	:root {
 		--color-accent: hsl(174.67deg 83.85% 31.57%);
+		--border: #22223b;
 		/* --color-bg-dark: black;
 		--color-text: black;
 		--color-text-dark: white; */
