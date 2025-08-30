@@ -15,7 +15,7 @@ export default {
           600: '#ca8a04'
         },
         secondary: {
-          DEFAULT: '#64748b',
+          DEFAULT: 'var(--text-secondary)',
           600: '#475569',
           700: '#334155',
           800: '#1e293b',
@@ -25,6 +25,13 @@ export default {
           DEFAULT: 'var(--color-accent)',
           400: '#facc15',
           500: '#eab308'
+        },
+        textSecondary: {
+          DEFAULT: 'var(--text-secondary)',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a'
         }
       },
       borderRadius: {

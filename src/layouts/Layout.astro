@@ -8,6 +8,7 @@ const {currentLocale} = Astro;
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="/index.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -42,11 +43,15 @@ const {currentLocale} = Astro;
 
 <style is:global>
 	:root {
-		--color-accent: hsl(174.67deg 83.85% 31.57%);
-		--border: #22223b;
-		/* --color-bg-dark: black;
-		--color-text: black;
-		--color-text-dark: white; */
+    --color-accent: hsl(174.67deg 83.85% 31.57%);
+    --border: #22223b;
+	--text-secondary: hsl(0deg 0% 60.78%);
+	}
+
+	.bg-grid {
+		background-image: linear-gradient(90deg, #8d8d8d14 1px, transparent 0), linear-gradient(180deg, #a7a5a514 1px, transparent 0);
+		background-size: 50px 50px;
+		background-attachment: fixed;
 	}
 	.button {
 		background-color: var(--color-accent);
@@ -82,14 +87,13 @@ const {currentLocale} = Astro;
 		align-items: center;
 		justify-content: center;
 	}
-	/* body {
-		background-color: var(--color-bg);
-		color: var(--color-text);
-		transition: background-color 0.3s, color 0.3s;
-	}
 
-	.dark body {
-		background-color: var(--color-bg-dark);
-		color: var(--color-text-dark);
-	} */
+	@keyframes reveal {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 </style>

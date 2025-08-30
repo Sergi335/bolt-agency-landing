@@ -13,7 +13,7 @@ const t = getI18N({ currentLocale });
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <div class="flex-shrink-0">
+      <div class="flex-shrink-0 flex-1 basis-0">
         <a href="/" class="font-bold text-gray-900 dark:text-white">
           AI Web Studio
         </a>
@@ -21,7 +21,7 @@ const t = getI18N({ currentLocale });
 
       <!-- Navigation Menu -->
       <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-8">
+        <div class="flex items-baseline space-x-8">
           <a href="#home" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">{t.home}</a>
           <a href="#services" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">{t.services}</a>
           <a href="#portfolio" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">{t.portfolio}</a>
@@ -32,9 +32,9 @@ const t = getI18N({ currentLocale });
       </div>
 
       <!-- Theme Toggle & CTA Button -->  
-      <div class="hidden md:block">
-        <div class="flex items-center space-x-4">
-          <select name="language" class="language-selector text-gray-900 dark:text-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 bg-transparent" value={currentLocale}>
+      <div class="hidden md:flex flex-1 basis-0 justify-end">
+        <div class="flex items-center gap-4">
+          <select name="language" class="language-selector dark:bg-primary dark:text-gray-100 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 cursor-pointer" value={currentLocale}>
             <option value="en" selected={currentLocale === 'en'}>English</option>
             <option value="es" selected={currentLocale === 'es'}>Español</option>
           </select>
@@ -42,7 +42,7 @@ const t = getI18N({ currentLocale });
             <MoonIcon />
             <SunIcon />
           </button>
-          <a href="#contact" class="button font-semibold shadow-sm h-12">
+          <a href="#contact" class="button font-semibold shadow-sm">
             Get a Free Demo
           </a>
         </div>

@@ -11,7 +11,7 @@
             Webs, AI & Marketing
             <span class="herotitle_span">for your business</span>
           </h1>
-          <p class="mt-6 text-xl text-gray-600 dark:text-gray-300 leading-tight">
+          <p class="mt-6 text-xl text-gray-600 dark:text-secondary leading-tight">
             We create your website, boost your brand, and generate catalogs and media with AI
           </p>
           
@@ -30,6 +30,7 @@
         <!-- Visual -->
         <div class="relative">  
           <!-- <img src="/img3.png" alt="Hero Image" class="w-full h-auto rounded-2xl shadow-lg" /> -->
+           <video src="./video_1.mp4" autoplay loop muted class="w-full h-auto rounded-2xl shadow-lg"></video>
         </div>
       </div>
     </div>
@@ -50,22 +51,34 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.button_transparent') as NodeListOf<HTMLElement>
-    const backdrop = document.querySelector('.button_backdrop') as HTMLElement
-    const { left, top, width, height } = buttons[0].getBoundingClientRect()
-    backdrop.style.setProperty('--left', `${left}px`)
-    backdrop.style.setProperty('--top', `${top}px`)
-    backdrop.style.setProperty('--width', `${width}px`)
-    backdrop.style.setProperty('--height', `${height}px`)
-    buttons.forEach(button => {
-      button.addEventListener('mouseenter', () => {
-        const { left, top, width, height } = button.getBoundingClientRect()
-        backdrop.style.setProperty('--left', `${left}px`)
-        backdrop.style.setProperty('--top', `${top}px`)
-        backdrop.style.setProperty('--width', `${width}px`)
-        backdrop.style.setProperty('--height', `${height}px`)
-      })
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.button_transparent') as NodeListOf<HTMLElement>
+  const backdrop = document.querySelector('.button_backdrop') as HTMLElement
+  const { left, top, width, height } = buttons[0].getBoundingClientRect()
+  backdrop.style.setProperty('--left', `${left}px`)
+  backdrop.style.setProperty('--top', `${top}px`)
+  backdrop.style.setProperty('--width', `${width}px`)
+  backdrop.style.setProperty('--height', `${height}px`)
+  buttons.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+      const { left, top, width, height } = button.getBoundingClientRect()
+      backdrop.style.setProperty('--left', `${left}px`)
+      backdrop.style.setProperty('--top', `${top}px`)
+      backdrop.style.setProperty('--width', `${width}px`)
+      backdrop.style.setProperty('--height', `${height}px`)
     })
   })
+  window.addEventListener('resize', () => {
+    const buttons = document.querySelectorAll('.button_transparent') as NodeListOf<HTMLElement>
+    const backdrop = document.querySelector('.button_backdrop') as HTMLElement
+    if (buttons.length && backdrop) {
+    // Puedes elegir el botón activo, aquí usamos el primero como referencia
+      const { left, top, width, height } = buttons[0].getBoundingClientRect()
+      backdrop.style.setProperty('--left', `${left}px`)
+      backdrop.style.setProperty('--top', `${top}px`)
+      backdrop.style.setProperty('--width', `${width}px`)
+      backdrop.style.setProperty('--height', `${height}px`)
+    }
+  })
+})
 </script>
