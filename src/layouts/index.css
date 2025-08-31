@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --chakra-colors-teal-50: #f0fdfa;
+    --chakra-colors-teal-100: #ccfbf1;
+    --chakra-colors-teal-200: #99f6e4;
+    --chakra-colors-teal-300: #5eead4;
+    --chakra-colors-teal-400: #2dd4bf;
+    --chakra-colors-teal-500: #14b8a6;
+    --chakra-colors-teal-600: #0d9488;
+    --chakra-colors-teal-700: #0c5d56;
+    --chakra-colors-teal-800: #114240;
+    --chakra-colors-teal-900: #032726;
+    --chakra-colors-teal-950: #021716;
+
+    --color-accent: hsl(174.67deg 83.85% 31.57%);
+    --magic-border: var(--chakra-colors-teal-50);
+    --magic-gradient: var(--chakra-colors-teal-100);
+    --text-secondary: hsl(0deg 0% 60.78%);
+
+    --section-spacing: 8rem;
+}
+
+html.dark {
+    --magic-border: #22223b;
+    --magic-gradient: #22223b;
+}
+
+#animated-beams {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}

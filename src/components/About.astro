@@ -1,19 +1,19 @@
 ---
 ---
 
-<section id="about" class="py-20 bg-slate-50 dark:bg-primary bg-grid transition-colors duration-300">
+<section id="about" class="py-section bg-white dark:bg-primary bg-grid transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="flex flex-col items-center gap-12">
         <!-- Content -->
-        <div>
+        <div class="flex flex-col justify-center items-center text-center">
           <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
             About AI Web Studio
           </h2>
-          <p class="text-lg text-gray-600 dark:text-secondary mb-6 leading-relaxed">
+          <p class="text-lg text-gray-600 dark:text-secondary mb-6 leading-relaxed text-balance">
             Founded by digital innovation experts, AI Web Studio combines cutting-edge artificial intelligence with proven marketing strategies to deliver exceptional results for businesses of all sizes.
           </p>
-          <p class="text-lg text-gray-600 dark:text-secondary mb-8 leading-relaxed">
+          <p class="text-lg text-gray-600 dark:text-secondary mb-8 leading-relaxed text-balance">
             Our team of developers, designers, and marketing specialists work together to create comprehensive digital solutions that drive growth and maximize ROI.
           </p>
           <div class="">
@@ -25,9 +25,9 @@
         </div>
 
         <!-- Avatar/Photo Placeholder -->
-        <div class="text-center bg-[url('./sergio.webp')] bg-contain bg-no-repeat bg-right h-full w-full">
+        <div id="about-avatar" class="text-center bg-[url('./sergio.webp')] bg-contain bg-no-repeat bg-right size-[300px]">
           <div class="relative inline-block w-full h-full backdrop:grayscale">
-            <div class="flex flex-col justify-end ml-11 pb-11 w-full h-full backdrop-filter backdrop-grayscale">
+            <div class="flex flex-col justify-end pb-11 w-full h-full backdrop-filter backdrop-grayscale">
               <h4 class="text-xl font-semibold text-gray-900 dark:text-white">Alex Johnson</h4>
               <p class="text-gray-600 dark:text-gray-300">Founder & CEO</p>
             </div>
@@ -37,3 +37,11 @@
     </div>
   </div>
 </section>
+
+<style>
+  #about h2, #about p, #about-avatar {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+  }
+</style>

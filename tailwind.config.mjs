@@ -23,15 +23,24 @@ export default {
         },
         accent: {
           DEFAULT: 'var(--color-accent)',
-          400: '#facc15',
-          500: '#eab308'
+          50: 'var(--chakra-colors-teal-50)',
+          100: 'var(--chakra-colors-teal-100)',
+          200: 'var(--chakra-colors-teal-200)',
+          300: 'var(--chakra-colors-teal-300)',
+          400: 'var(--chakra-colors-teal-400)',
+          500: 'var(--chakra-colors-teal-500)',
+          600: 'var(--chakra-colors-teal-600)',
+          700: 'var(--chakra-colors-teal-700)',
+          800: 'var(--chakra-colors-teal-800)',
+          900: 'var(--chakra-colors-teal-900)',
+          950: 'var(--chakra-colors-teal-950)'
         },
-        textSecondary: {
-          DEFAULT: 'var(--text-secondary)',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a'
+        light: {
+          DEFAULT: 'var(--chakra-colors-900)',
+          600: 'var(--chakra-colors-600)',
+          700: 'var(--chakra-colors-700)',
+          800: 'var(--chakra-colors-800)',
+          900: 'var(--chakra-colors-900)'
         }
       },
       borderRadius: {
@@ -41,6 +50,9 @@ export default {
         lg: '0.5rem',
         full: '9999px'
 
+      },
+      padding: {
+        section: 'var(--section-spacing)'
       }
     }
   },
