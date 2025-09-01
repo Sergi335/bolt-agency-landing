@@ -45,7 +45,8 @@ import { MagicCard } from "./magicui/magic-card"
       <div class="max-w-sm">
         <MagicCard client:visible gradientColor={'var(--magic-gradient)'} className="p-[1px] rounded-lg bg-white dark:bg-primary">
           <a href="#">
-              <img class="rounded-t-lg object-cover aspect-video" src="/img4.png" alt="" />
+              <!-- <img class="rounded-t-lg object-cover aspect-video" src="/img4.png" alt="" /> -->
+               <video src="/video_1.mp4" muted class="rounded-t-lg object-cover aspect-video" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;"></video>
           </a>
           <div class="p-5">
               <a href="#">
