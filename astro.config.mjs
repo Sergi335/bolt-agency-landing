@@ -14,5 +14,6 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
+  site: import.meta.env.PUBLIC_SITE_URL || 'http://localhost:4321',
   output: 'server'
 })

@@ -1,15 +1,15 @@
 ---
-import { getI18N } from '../i18n/index.ts';
-import SunIcon from './icons/SunIcon.astro';
-import MoonIcon from './icons/MoonIcon.astro';
-import BurguerMenuIcon from './icons/BurguerMenuIcon.astro';
+import { getI18N } from '../i18n/index.ts'
+import SunIcon from './icons/SunIcon.astro'
+import MoonIcon from './icons/MoonIcon.astro'
+import BurguerMenuIcon from './icons/BurguerMenuIcon.astro'
 
-const { currentLocale } = Astro;
+const { currentLocale } = Astro
 
 const t = getI18N({ currentLocale });
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-primary/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-primary/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
@@ -22,23 +22,23 @@ const t = getI18N({ currentLocale });
       <!-- Navigation Menu -->
       <div class="hidden md:block">
         <div class="flex items-baseline space-x-8">
-          <a href="#home" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">{t.home}</a>
-          <a href="#services" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">{t.services}</a>
-          <a href="#portfolio" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">{t.portfolio}</a>
-          <a href="#about" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">{t.about}</a>
-          <a href="#blog" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">{t.blog}</a>
-          <a href="#contact" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">{t.contact}</a>
+          <a href="#home" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">{t.home}</a>
+          <a href="#services" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">{t.services}</a>
+          <a href="#portfolio" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">{t.portfolio}</a>
+          <a href="#about" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">{t.about}</a>
+          <a href="#blog" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">{t.blog}</a>
+          <a href="#contact" class="text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">{t.contact}</a>
         </div>
       </div>
 
-      <!-- Theme Toggle & CTA Button -->  
+      <!-- Theme Toggle & CTA Button -->
       <div class="hidden md:flex flex-1 basis-0 justify-end">
         <div class="flex items-center gap-4">
-          <select name="language" class="language-selector dark:bg-primary dark:text-gray-100 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 cursor-pointer" value={currentLocale}>
+          <select name="language" class="language-selector dark:bg-primary dark:text-gray-100 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-accent cursor-pointer" value={currentLocale}>
             <option value="en" selected={currentLocale === 'en'}>English</option>
             <option value="es" selected={currentLocale === 'es'}>Español</option>
           </select>
-          <button onclick="toggleTheme()" class="theme-toggle p-2 rounded group transition-colors duration-200">
+          <button onclick="toggleTheme()" class="theme-toggle p-2 rounded group">
             <MoonIcon />
             <SunIcon />
           </button>
@@ -59,14 +59,14 @@ const t = getI18N({ currentLocale });
     <!-- Mobile menu -->
     <div class="mobile-menu hidden md:hidden">
       <div class="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-800 shadow-lg rounded-2xl mt-2">
-        <a href="#home" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">Home</a>
-        <a href="#services" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">Services</a>
-        <a href="#portfolio" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">Portfolio</a>
-        <a href="#about" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">About</a>
-        <a href="#blog" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">Blog</a>
-        <a href="#contact" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent transition-colors duration-200 font-medium">Contact</a>
+        <a href="#home" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">Home</a>
+        <a href="#services" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">Services</a>
+        <a href="#portfolio" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">Portfolio</a>
+        <a href="#about" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">About</a>
+        <a href="#blog" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">Blog</a>
+        <a href="#contact" class="block px-3 py-2 text-gray-700 dark:text-gray-300 dark:hover:text-accent font-medium">Contact</a>
         <div class="flex items-center justify-between mx-3 mt-4">
-          <button onclick="toggleTheme()" class="p-2 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
+          <button onclick="toggleTheme()" class="p-2 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
             <MoonIcon />
             <SunIcon />
           </button>

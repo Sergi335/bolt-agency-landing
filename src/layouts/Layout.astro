@@ -1,93 +1,143 @@
 ---
-import '../layouts/index.css';
-const {currentLocale} = Astro;
+import '../layouts/index.css'
+const { currentLocale, title, description } = Astro.props;
+
+// Valores por defecto si no pasas props
+const siteTitle = title || "AI Web Studio - Web Creation, AI Media & Digital Marketing";
+const siteDescription = description || "We create websites, boost your brand, and generate catalogs and media with AI. Professional web development, AI-powered content, and digital marketing services.";
+const siteUrl = Astro.site
+const previewImage = `${siteUrl}preview.jpg`; // cambia esto
 ---
 <!doctype html>
-<html lang={currentLocale} class="scroll-smooth dark">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-		<title>AI Web Studio - Web Creation, AI Media & Digital Marketing</title>
-		<meta name="description" content="We create websites, boost your brand, and generate catalogs and media with AI. Professional web development, AI-powered content, and digital marketing services.">
-	</head>
-	<body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-		<slot />
-		<script type="module">
-			function initTheme () {
-			  const theme = localStorage.getItem('theme') || 'dark'
-			  document.documentElement.classList.toggle('dark', theme === 'dark')
-			}
+<html lang={currentLocale} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{siteTitle}</title>
+    <meta name="title" content={siteTitle} />
+    <meta name="description" content={siteDescription} />
 
-			function toggleTheme () {
-			  const isDark = document.documentElement.classList.contains('dark')
-			  const newTheme = isDark ? 'light' : 'dark'
-			  document.documentElement.classList.toggle('dark', newTheme === 'dark')
-			  localStorage.setItem('theme', newTheme)
-			}
+    <!-- SEO básico -->
+    <link rel="canonical" href={siteUrl} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-			// Inicializa el tema al cargar
-			initTheme()
+    <!-- Open Graph -->
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={previewImage} />
 
-			// Asigna el evento a un botón por selector
-			document.querySelectorAll('.theme-toggle').forEach(btn => {
-			  btn.addEventListener('click', toggleTheme)
-			})
-		</script>
-	</body>
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content={previewImage} />
+
+    <!-- Hreflang para multilenguaje -->
+    <link rel="alternate" hreflang="es" href={`${siteUrl}es/`} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}en/`} />
+
+    <!-- Script inline: inicializar tema sin flash -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem('theme')
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        const theme = stored || (prefersDark ? 'dark' : 'light')
+        document.documentElement.classList.toggle('dark', theme === 'dark')
+      })()
+    </script>
+
+    <!-- Icono -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI Web Studio",
+      "url": "{siteUrl}",
+      "logo": "{siteUrl}logo.png",
+      "sameAs": [
+        "https://twitter.com/tuusuario",
+        "https://linkedin.com/company/tuempresa"
+      ]
+    }
+    </script>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/src/layouts/index.css">
+  </head>
+  <body class="font-sans antialiased text-gray-900 dark:text-white">
+    <slot />
+    <!-- Script toggle tema -->
+    <script>
+    function toggleTheme () {
+      const isDark = document.documentElement.classList.contains('dark')
+      const newTheme = isDark ? 'light' : 'dark'
+      document.documentElement.classList.toggle('dark', newTheme === 'dark')
+      localStorage.setItem('theme', newTheme)
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.theme-toggle').forEach(btn => {
+        btn.addEventListener('click', toggleTheme)
+      })
+    })
+    </script>
+  </body>
 </html>
 
 <style is:global>
-	.bg-grid {
-		background-image: linear-gradient(90deg, #8d8d8d14 1px, transparent 0), linear-gradient(180deg, #a7a5a514 1px, transparent 0);
-		background-size: 50px 50px;
-		background-attachment: fixed;
-	}
-	.button {
-		background-color: var(--color-accent);
-		color: white;
-		border: none;
-		border-radius: 0.25rem;
-		padding: 0.5rem 1rem;
-		cursor: pointer;
-		transition: background-color 0.3s;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.button_outline {
-		background-color: transparent;
-		border: 2px solid var(--color-accent);
-		border-radius: 0.25rem;
-		padding: 0.5rem 1rem;
-		cursor: pointer;
-		transition: background-color 0.3s, color 0.3s;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.button_transparent {
-		background-color: transparent;
-		border: none;
-		/* color: var(--color-accent); */
-		padding: 0.5rem 1rem;
-		cursor: pointer;
-		transition: background-color 0.3s, color 0.3s;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	@keyframes reveal {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
+  html.dark {
+    color-scheme: dark;
+  }
+  .bg-grid {
+    background-image: linear-gradient(90deg, #8d8d8d14 1px, transparent 0),
+                      linear-gradient(180deg, #a7a5a514 1px, transparent 0);
+    background-size: 50px 50px;
+    background-attachment: fixed;
+  }
+  .button {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .button_outline {
+    background-color: transparent;
+    border: 2px solid var(--color-accent);
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .button_transparent {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
+
