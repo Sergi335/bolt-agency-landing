@@ -1,4 +1,5 @@
 {
+  "header": { 
     "home": "Home",
     "services": "Services",
     "portfolio": "Portfolio",
@@ -6,4 +7,12 @@
     "blog": "Blog",
     "contact": "Contact",
     "demo": "Get a Free Demo"
+  },
+  "hero": {
+    "title": "Webs, AI & Marketing",
+    "title_gradient": "for your business",
+    "subtitle": "We help SMEs and professionals gain online visibility with fast websites, AI-generated content, and digital marketing campaigns.",
+    "cta1": "Start with us",
+    "cta2": "See portfolio"
   }
+}

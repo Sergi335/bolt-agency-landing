@@ -1,4 +1,8 @@
 ---
+import { getI18N } from '../i18n/index.ts'
+const { currentLocale } = Astro
+
+const t = getI18N({ currentLocale });
 ---
 
 <section id="home" class="pt-16 bg-white dark:bg-primary customgrid transition-colors duration-300">
@@ -7,22 +11,22 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Content -->
         <div class="text-center lg:text-left">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-            Webs, AI & Marketing
-            <span class="herotitle_span">for your business</span>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
+            {t.hero.title}
+            <span class="herotitle_span">{t.hero.title_gradient}</span>
           </h1>
-          <p class="mt-6 text-xl text-gray-600 dark:text-secondary leading-tight">
-            We create your website, boost your brand, and generate catalogs and media with AI
+          <p class="mt-6 text-xl text-gray-600 dark:text-secondary">
+            {t.hero.subtitle}
           </p>
           
           <!-- CTAs -->
           <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <div class={`button_backdrop absolute bg-accent rounded left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out`}></div>
             <a href="#contact" class="text-white button_transparent font-semibold z-10">
-              Start your project
+              {t.hero.cta1}
             </a>
             <a href="#portfolio" class="text-white button_transparent font-semibold z-10">
-              See portfolio
+              {t.hero.cta2}
             </a>
           </div>
         </div>

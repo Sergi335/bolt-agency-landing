@@ -1,9 +1,18 @@
 {
-    "home": "Inicio",
-    "services": "Servicios",
-    "portfolio": "Portafolio",
-    "about": "Acerca",
-    "blog": "Blog",
-    "contact": "Contacto",
-    "demo": "Solicita una demo gratis"
+    "header": {
+        "home": "Inicio",
+        "services": "Servicios",
+        "portfolio": "Portafolio",
+        "about": "Acerca",
+        "blog": "Blog",
+        "contact": "Contacto",
+        "demo": "Solicita una demo gratis"
+    },
+    "hero": {
+        "title": "Webs, IA & Marketing",
+        "title_gradient": "para tu negocio",
+        "subtitle": "Ayudamos a pymes y profesionales a ganar visibilidad online con páginas web rápidas, contenidos creados con IA y campañas de marketing digital",
+        "cta1": "Comienza con nosotros",
+        "cta2": "Portafolio"
+    }
 }
