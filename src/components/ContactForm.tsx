@@ -1,13 +1,13 @@
 // src/components/ui/ContactForm.tsx
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@components/ui/select";
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@components/ui/select'
 
-export function ContactForm() {
+export function ContactForm () {
   return (
     <form className="space-y-6">
       <div>
@@ -46,7 +46,7 @@ export function ContactForm() {
           <SelectTrigger className="w-full px-4 py-3 rounded-sm bg-accent-100 dark:bg-accent-900 text-gray-900 dark:text-[#b6bdc9] border-none h-12 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-200">
             <SelectValue placeholder="Select a service" />
           </SelectTrigger>
-          <SelectContent className="bg-white dark:bg-accent-900 text-gray-900 dark:text-white border border-gray-300 dark:border-accent-700 transition-all duration-200">
+          <SelectContent className="bg-white dark:bg-accent-900 text-gray-900 dark:text-white border border-gray-300 dark:border-accent-700 rounded-md shadow-lg data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-out">
             <SelectItem value="web-development">Web Development</SelectItem>
             <SelectItem value="ai-content">AI Content Generation</SelectItem>
             <SelectItem value="digital-marketing">Digital Marketing</SelectItem>
@@ -73,5 +73,5 @@ export function ContactForm() {
         Send Message
       </button>
     </form>
-  );
+  )
 }

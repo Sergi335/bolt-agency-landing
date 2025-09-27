@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
@@ -53,8 +54,34 @@ export default {
       },
       padding: {
         section: 'var(--section-spacing)'
+      },
+      animation: {
+        'fade-in': 'fade-in 0.2s ease-in',
+        'fade-out': 'fade-out 0.3s ease-out',
+        'slide-in-top': 'slide-in-top 0.1s ease-out'
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': {
+            'opacity': '0'
+          },
+          '100%': {
+            'opacity': '1'
+          }
+        },
+        'fade-out': {
+          '0%': {
+            'opacity': '1'
+          },
+          '100%': {
+            'opacity': '0'
+          }
+        },
+        'slide-in-top': {
+          '0%': { transform: 'translateY(-20px)' },
+          '100%': { transform: 'translateY(0)' }
+        }
       }
     }
-  },
-  plugins: []
+  }
 }
