@@ -21,9 +21,12 @@
     --text-secondary: hsl(0deg 0% 60.78%);
 
     --section-spacing: 8rem;
+
+    --color-base: hsl(0, 0%, 100%);
 }
 
 html.dark {
+    --color-base: hsl(0, 0%, 0%);
     --magic-border: #22223b;
     --magic-gradient: #22223b;
 }

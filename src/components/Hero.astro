@@ -7,7 +7,7 @@ const t = getI18N({ currentLocale });
 
 <section id="home" class="pt-16 bg-white dark:bg-primary customgrid transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="py-20 lg:py-32">
+    <div class="bgheroimage py-20 lg:py-32">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Content -->
         <div class="text-center lg:text-left">
@@ -33,7 +33,7 @@ const t = getI18N({ currentLocale });
 
         <!-- Visual -->
         <div class="relative">  
-          <!-- <img src="/group.png" alt="Hero Image" class="w-full h-auto rounded-2xl shadow-lg" /> -->
+          <!-- <img src="/img6.png" alt="Hero Image" class="w-full h-auto rounded-2xl shadow-lg" /> -->
            <!-- <video src="./video_1.mp4" autoplay loop muted class="w-full h-auto rounded-2xl shadow-lg"></video> -->
         </div>
       </div>
@@ -51,6 +51,15 @@ const t = getI18N({ currentLocale });
     background: -webkit-linear-gradient(#eee, #0d9488);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .bgheroimage {
+    /* background-image: linear-gradient(90deg, var(--color-base) 0%, rgba(237, 221, 83, 0) 100%), linear-gradient(270deg, var(--color-base) 0%, rgb(255 255 255 / 0%) 42%), url('/img7-light.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  html.dark .bgheroimage {
+    background-image: linear-gradient(90deg, var(--color-base) 0%, rgba(237, 221, 83, 0) 100%), linear-gradient(270deg, var(--color-base) 0%, rgb(255 255 255 / 0%) 42%), url('/img7.jpg');
   }
 </style>
 
