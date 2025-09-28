@@ -68,10 +68,11 @@ export function ContactForm () {
           placeholder="Tell us about your project, goals, and requirements..."
         />
       </div>
-
-      <button type="submit" className="button">
-        Send Message
-      </button>
+      <div className="flex justify-end">
+        <button type="submit" className="button">
+          Send Message
+        </button>
+      </div>
     </form>
   )
 }

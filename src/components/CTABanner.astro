@@ -1,8 +1,8 @@
 ---
-import { AnimatedBeamDemo } from "./AnimatedBeams"
+import { AnimatedBeamDemo } from './AnimatedBeams'
 ---
 
-<section id="cta" class="py-section bg-white dark:bg-primary bg-grid">
+<section id="cta" class="py-section bg-white dark:bg-primary">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center">
       <h2 class="text-3xl sm:text-4xl font-bold text-light dark:text-white mb-6">
@@ -15,7 +15,7 @@ import { AnimatedBeamDemo } from "./AnimatedBeams"
         Book your free demo
       </a>
     </div>
-  </div>  
+  </div>
   <AnimatedBeamDemo client:visible />
 </section>
 
@@ -24,5 +24,8 @@ import { AnimatedBeamDemo } from "./AnimatedBeams"
     animation: reveal linear both;
     animation-timeline: view();
     animation-range: entry 20% cover 30%;
+  }
+  #cta {
+    background-image: linear-gradient(180deg, hsl(0deg 0% 0%) 0%, rgba(237, 221, 83, 0) 30%), linear-gradient(0deg, hsl(0deg 0% 0%) 0%, rgb(255 255 255 / 0%) 35%), url(backgrounds/bg-main-dark-1440w.jpg);
   }
 </style>
