@@ -14,5 +14,22 @@
         "subtitle": "Ayudamos a pymes y profesionales a ganar visibilidad online con páginas web rápidas, contenidos creados con IA y campañas de marketing digital",
         "cta1": "Comienza con nosotros",
         "cta2": "Portafolio"
+    },
+    "services": {
+        "title": "Nuestros Servicios",
+        "subtitle": "Combinamos tecnología de vanguardia con experiencia creativa para ofrecer soluciones digitales integrales.",
+        "web_design": {
+            "title": "Web",
+            "description": "Creamos sitios web atractivos, adaptados a tu marca y objetivos comerciales. Nuestros diseños están optimizados para el rendimiento."
+        },
+        "ai_media": {
+            "title": "Inteligencia Artificial",
+            "description": "Aprovecha el poder de la IA para generar contenido de alta calidad, incluyendo texto, imágenes y videos, para mejorar tu presencia en línea."
+        },
+        "marketing": {
+            "title": "Marketing",
+            "description": "Impulsa la visibilidad y el compromiso de tu marca con nuestras estrategias de marketing digital basadas en datos, que incluyen SEO, redes sociales y publicidad pagada."
+        },
+        "cta": "Saber más"
     }
 }

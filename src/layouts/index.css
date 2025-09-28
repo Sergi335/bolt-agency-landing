@@ -18,17 +18,25 @@
     --color-accent: hsl(174.67deg 83.85% 31.57%);
     --magic-border: var(--chakra-colors-teal-50);
     --magic-gradient: var(--chakra-colors-teal-100);
-    --text-secondary: hsl(0deg 0% 60.78%);
 
     --section-spacing: 8rem;
 
     --color-base: hsl(0, 0%, 100%);
+    --color-secondary: var(--chakra-colors-teal-100);
+    --border-color: var(--chakra-colors-teal-300);
+    --text-primary: var(--chakra-colors-teal-900);
+    --text-secondary: var(--chakra-colors-teal-800);
 }
 
 html.dark {
-    --color-base: hsl(0, 0%, 0%);
     --magic-border: #22223b;
     --magic-gradient: #22223b;
+
+    --color-base: hsl(0, 0%, 0%);
+    --color-secondary: var(--chakra-colors-teal-900);
+    --border-color: var(--chakra-colors-teal-900);
+    --text-primary: var(--chakra-colors-teal-50);
+    --text-secondary: var(--chakra-colors-teal-400);
 }
 
 #animated-beams {

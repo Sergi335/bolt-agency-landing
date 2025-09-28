@@ -1,10 +1,11 @@
 ---
 import '../layouts/index.css'
-const { currentLocale, title, description } = Astro.props;
+import { ClientRouter } from 'astro:transitions'
+const { currentLocale, title, description } = Astro.props
 
 // Valores por defecto si no pasas props
-const siteTitle = title || "AI Web Studio - Web Creation, AI Media & Digital Marketing";
-const siteDescription = description || "We create websites, boost your brand, and generate catalogs and media with AI. Professional web development, AI-powered content, and digital marketing services.";
+const siteTitle = title || 'AI Web Studio - Web Creation, AI Media & Digital Marketing'
+const siteDescription = description || 'We create websites, boost your brand, and generate catalogs and media with AI. Professional web development, AI-powered content, and digital marketing services.'
 const siteUrl = Astro.site
 const previewImage = `${siteUrl}preview.jpg`; // cambia esto
 ---
@@ -72,9 +73,7 @@ const previewImage = `${siteUrl}preview.jpg`; // cambia esto
       ]
     }
     </script>
-
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="/src/layouts/index.css">
+    <ClientRouter />
   </head>
   <body class="font-sans antialiased text-gray-900 dark:text-white">
     <slot />

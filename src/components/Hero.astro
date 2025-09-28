@@ -4,27 +4,27 @@ const { currentLocale } = Astro
 const t = getI18N({ currentLocale })
 ---
 
-<section id="home" class="pt-16 bg-white dark:bg-primary customgrid transition-colors duration-300">
+<section id="hero" class="pt-16 bg-primary bg-grid">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bgheroimage py-20 lg:py-32">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Content -->
         <div class="text-center lg:text-left">
-          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
+          <h1 class="text-4xl sm:text-5xl font-bold text-text-primary leading-tight">
             {t.hero.title}
             <span class="herotitle_span">{t.hero.title_gradient}</span>
           </h1>
-          <p class="mt-6 text-xl text-gray-600 dark:text-secondary">
+          <p class="mt-6 text-xl text-text-secondary">
             {t.hero.subtitle}
           </p>
 
           <!-- CTAs -->
           <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <div class={'button_backdrop absolute bg-accent rounded left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out'}></div>
-            <a href="#contact" class="text-white button_transparent font-semibold z-10">
+            <a href="#contact" class="text-text-primary button_transparent font-semibold z-10">
               {t.hero.cta1}
             </a>
-            <a href="#portfolio" class="text-white button_transparent font-semibold z-10">
+            <a href="#portfolio" class="text-text-primary button_transparent font-semibold z-10">
               {t.hero.cta2}
             </a>
           </div>
@@ -41,11 +41,6 @@ const t = getI18N({ currentLocale })
 </section>
 
 <style>
-  .customgrid {
-    background-image: linear-gradient(90deg, #8d8d8d14 1px, transparent 0), linear-gradient(180deg, #a7a5a514 1px, transparent 0);
-    background-size: 50px 50px;
-    background-attachment: fixed;
-  }
   .herotitle_span {
     background: -webkit-linear-gradient(#eee, #0d9488);
     -webkit-background-clip: text;
@@ -60,6 +55,9 @@ const t = getI18N({ currentLocale })
   html.dark .bgheroimage {
     background-image: linear-gradient(90deg, var(--color-base) 0%, rgba(237, 221, 83, 0) 100%), linear-gradient(270deg, var(--color-base) 0%, rgb(255 255 255 / 0%) 42%), url('/img7.jpg');
   }
+  .active {
+    color: white !important;
+  }
 </style>
 
 <script>
@@ -71,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   backdrop.style.setProperty('--top', `${top}px`)
   backdrop.style.setProperty('--width', `${width}px`)
   backdrop.style.setProperty('--height', `${height}px`)
+  buttons[0].classList.add('active')
   buttons.forEach(button => {
     button.addEventListener('mouseenter', () => {
       const { left, top, width, height } = button.getBoundingClientRect()
@@ -78,6 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
       backdrop.style.setProperty('--top', `${top}px`)
       backdrop.style.setProperty('--width', `${width}px`)
       backdrop.style.setProperty('--height', `${height}px`)
+      buttons.forEach(btn => {
+        if (btn !== button) btn.classList.remove('active')
+      })
+      button.classList.add('active')
     })
   })
   window.addEventListener('resize', () => {
@@ -90,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
       backdrop.style.setProperty('--top', `${top}px`)
       backdrop.style.setProperty('--width', `${width}px`)
       backdrop.style.setProperty('--height', `${height}px`)
+      buttons[0].classList.add('active')
     }
   })
 })

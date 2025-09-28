@@ -8,15 +8,18 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif']
       },
+      borderColor: {
+        primary: 'var(--border-color)'
+      },
       colors: {
         primary: {
-          DEFAULT: '#000000',
+          DEFAULT: 'var(--color-base)',
           400: '#facc15',
           500: '#eab308',
           600: '#ca8a04'
         },
         secondary: {
-          DEFAULT: 'var(--text-secondary)',
+          DEFAULT: 'var(--color-secondary)',
           600: '#475569',
           700: '#334155',
           800: '#1e293b',
@@ -42,6 +45,10 @@ export default {
           700: 'var(--chakra-colors-700)',
           800: 'var(--chakra-colors-800)',
           900: 'var(--chakra-colors-900)'
+        },
+        text: {
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)'
         }
       },
       borderRadius: {
