@@ -138,5 +138,15 @@ const previewImage = `${siteUrl}preview.jpg`; // cambia esto
     align-items: center;
     justify-content: center;
   }
+  .card_active {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+
+    & .gallery {
+        display: flex;
+        margin-bottom: var(--gap);
+    }
+  }
 </style>
 

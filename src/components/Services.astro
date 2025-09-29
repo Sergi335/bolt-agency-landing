@@ -1,9 +1,5 @@
 ---
-import AnthropicIcon from './icons/AnthropicIcon.astro'
-import GeminiIcon from './icons/GeminiIcon.astro'
-import OpenAiIcon from './icons/OpenAiIcon.astro'
-import { MagicCard } from './magicui/magic-card'
-
+import MagicCards from '@components/MagicCards'
 import { getI18N } from '../i18n/index.ts'
 const { currentLocale } = Astro
 const t = getI18N({ currentLocale })
@@ -23,75 +19,5 @@ const t = getI18N({ currentLocale })
   </div>
 
     <!-- Highlight Cards -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-      <!-- Web Creation -->
-      <div class="max-w-sm">
-        <MagicCard client:visible gradientColor={'var(--magic-gradient)'} className="p-[1px] rounded-lg bg-primary">
-          <a href="#">
-            <img class="rounded-t-lg object-cover aspect-video" src="/img2.png" alt="" />
-          </a>
-          <div class="p-5">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-text-primary">{t.services.web_design.title}</h5>
-            <p class="mb-7 font-normal text-text-secondary">{t.services.web_design.description}</p>
-            <a href="#" class="button !inline-flex">
-              {t.services.cta}
-              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-              </svg>
-            </a>
-          </div>
-        </MagicCard>
-      </div>
-
-      <!-- AI Media -->
-      <div class="max-w-sm">
-        <MagicCard client:visible gradientColor={'var(--magic-gradient)'} className="p-[1px] rounded-lg bg-primary">
-          <a href="#">
-              <!-- <img class="rounded-t-lg object-cover aspect-video" src="/img4.png" alt="" /> -->
-              <video src="/video_1.mp4" muted class="rounded-t-lg object-cover aspect-video" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;"></video>
-          </a>
-          <div class="p-5">
-
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-text-primary">{t.services.ai_media.title}</h5>
-
-            <p class="mb-7 font-normal text-text-secondary">{t.services.ai_media.description}</p>
-            <div class="flex gap-4 justify-between items-center">
-              <a href="#" class="button !inline-flex">
-                {t.services.cta}
-                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                </svg>
-              </a>
-              <div class="flex gap-2">
-                <OpenAiIcon class:list={['w-6 h-6']} fill="currentColor" title="OpenAI" />
-                <GeminiIcon class:list={['w-6 h-6']} fill="currentColor" title="Google Gemini" />
-                <AnthropicIcon class:list={['w-6 h-6']} fill="currentColor" title="Anthropic" />
-              </div>
-            </div>
-          </div>
-        </MagicCard>
-      </div>
-
-      <!-- Marketing -->
-      <div class="max-w-sm">
-        <MagicCard client:visible gradientColor={'var(--magic-gradient)'} className="p-[1px] rounded-lg bg-primary">
-          <a href="#">
-            <img class="rounded-t-lg object-cover aspect-video" src="/img3.png" alt="" />
-          </a>
-          <div class="p-5">
-
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-text-primary">{t.services.marketing.title}</h5>
-
-            <p class="mb-7 font-normal text-text-secondary">{t.services.marketing.description}</p>
-            <a href="#" class="!inline-flex button">
-              {t.services.cta}
-              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-              </svg>
-            </a>
-          </div>
-        </MagicCard>
-      </div>
-
-  </div>
+  <MagicCards client:visible currentLocale={currentLocale ? currentLocale : 'es'} />
 </section>
