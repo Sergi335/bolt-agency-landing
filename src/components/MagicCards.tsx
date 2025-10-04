@@ -43,9 +43,9 @@ export default function MagicCards ({ currentLocale }: {currentLocale: string}) 
               <img className="card1 rounded-t-lg object-cover aspect-video w-full" src="/img2.png" alt="" />
             </div>
             <div className="flex-col gallery hidden gap-2 p-2">
-              <img className='max-w-80' src="public/img4.png" alt="Random Image" />
-              <img className='max-w-80' src="public/img4.png" alt="Random Image" />
-              <img className='max-w-80' src="public/img4.png" alt="Random Image" />
+              <img className='max-w-80' src="/img4.png" alt="Random Image" />
+              <img className='max-w-80' src="/img4.png" alt="Random Image" />
+              <img className='max-w-80' src="/img4.png" alt="Random Image" />
             </div>
           </div>
           <div className="p-5">
