@@ -3,6 +3,7 @@ import { getI18N } from '../i18n/index.ts'
 import SunIcon from './icons/SunIcon.astro'
 import MoonIcon from './icons/MoonIcon.astro'
 import BurguerMenuIcon from './icons/BurguerMenuIcon.astro'
+import Logo from './icons/logo.astro'
 
 const { currentLocale } = Astro
 
@@ -14,15 +15,16 @@ const t = getI18N({ currentLocale });
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <div class="flex-shrink-0 flex-1">
-        <a href="/" class="font-bold text-text-primary">
-          AI Web Studio
+        <a href="/" class="font-bold text-text-primary uppercase flex items-center">
+          <Logo class="max-w-6 contrast-50 inline" />
+          Costa<span class="font-light">blanca</span>
         </a>
       </div>
 
       <!-- Navigation Menu -->
       <div class="hidden md:block">
         <div class="flex items-baseline space-x-8">
-          <a href="#home" class="text-text-secondary hover:text-accent font-medium">{t.header.home}</a>
+          <a href="#hero" class="text-text-secondary hover:text-accent font-medium">{t.header.home}</a>
           <a href="#services" class="text-text-secondary hover:text-accent font-medium">{t.header.services}</a>
           <a href="#portfolio" class="text-text-secondary hover:text-accent font-medium">{t.header.portfolio}</a>
           <a href="#about" class="text-text-secondary hover:text-accent font-medium">{t.header.about}</a>

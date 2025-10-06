@@ -35,7 +35,7 @@ export default function MagicCards ({ currentLocale }: {currentLocale: string}) 
     })
   }
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 relative">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
       <div id='card1' ref={card1Ref}>
         <MagicCard gradientColor={'var(--magic-gradient)'} className="p-[1px] rounded-lg bg-primary">
           <div className='flex'>
