@@ -1,0 +1,124 @@
+---
+import Layout from './Layout.astro'
+import Header from '@components/Header.astro'
+import Footer from '@components/Footer.astro'
+
+interface Props {
+  title: string
+  date: string
+  description: string
+  image: string
+}
+
+const { title, date, description, image } = Astro.props
+---
+
+<Layout title={title}>
+  <Header />
+  <main class="pt-24 pb-16 bg-white dark:bg-primary transition-colors duration-300">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8">
+        <a href="/" class="text-accent hover:underline">Inicio</a>
+        <span class="text-text-secondary mx-2">/</span>
+        <a href="/#blog" class="text-accent hover:underline">Blog</a>
+        <span class="text-text-secondary mx-2">/</span>
+        <span class="text-text-secondary">{title}</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="mb-8">
+        <h1 class="text-4xl sm:text-5xl font-bold text-text-primary mb-4">
+          {title}
+        </h1>
+        <div class="flex items-center gap-4 text-text-secondary mb-6">
+          <time datetime={date}>{date}</time>
+        </div>
+        <p class="text-xl text-text-secondary leading-relaxed">
+          {description}
+        </p>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="mb-12 rounded-2xl overflow-hidden">
+        <img 
+          src={image} 
+          alt={title}
+          class="w-full h-auto object-cover"
+        />
+      </div>
+
+      <!-- Article Content -->
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        <slot />
+      </div>
+
+      <!-- Back to Blog -->
+      <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <a 
+          href="/#blog" 
+          class="inline-flex items-center text-accent hover:underline font-medium"
+        >
+          ← Volver al blog
+        </a>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .prose {
+    color: var(--text-primary);
+  }
+  
+  .prose :is(h2, h3, h4) {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+
+  .prose h2 {
+    font-size: 2rem;
+  }
+
+  .prose h3 {
+    font-size: 1.5rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.5em;
+    line-height: 1.75;
+  }
+
+  .prose ul, .prose ol {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+
+  .prose li {
+    margin-bottom: 0.5em;
+  }
+
+  .prose strong {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .prose a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .prose code {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25em;
+    font-size: 0.9em;
+  }
+
+  .dark .prose code {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+</style>
