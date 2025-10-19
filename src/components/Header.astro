@@ -4,6 +4,7 @@ import SunIcon from './icons/SunIcon.astro'
 import MoonIcon from './icons/MoonIcon.astro'
 import BurguerMenuIcon from './icons/BurguerMenuIcon.astro'
 import Logo from './icons/logo.astro'
+import ThemeToggle from './ThemeToggle.astro'
 
 const locale = Astro.locals.currentLocale || 'en'
 const t = getI18N({ currentLocale: locale });
@@ -39,10 +40,13 @@ const t = getI18N({ currentLocale: locale });
             <option value="en" selected={currentLocale === 'en'}>English</option>
             <option value="es" selected={currentLocale === 'es'}>Español</option>
           </select> -->
-          <button onclick="toggleTheme()" class="theme-toggle p-2 rounded group">
+          <!-- <button onclick="toggleTheme()" class="theme-toggle p-2 rounded group">
             <MoonIcon />
             <SunIcon />
-          </button>
+          </button> -->
+          <div class="theme-toggle">
+            <ThemeToggle />
+          </div>
           <!-- <a href="#contact" class="button font-semibold shadow-sm">
             Get a Free Demo
           </a> -->

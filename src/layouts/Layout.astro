@@ -1,6 +1,6 @@
 ---
+import { ClientRouter } from 'astro:transitions'
 import '../layouts/index.css'
-// import { ClientRouter } from 'astro:transitions'
 const { currentLocale, title, description } = Astro.props
 
 // Valores por defecto si no pasas props
@@ -38,16 +38,6 @@ const previewImage = `${siteUrl}preview.jpg`; // cambia esto
     <link rel="alternate" hreflang="es" href={`${siteUrl}es/`} />
     <link rel="alternate" hreflang="en" href={`${siteUrl}en/`} />
 
-    <!-- Script inline: inicializar tema sin flash -->
-    <script is:inline>
-      (function () {
-        const stored = localStorage.getItem('theme')
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-        const theme = stored || (prefersDark ? 'dark' : 'light')
-        document.documentElement.classList.toggle('dark', theme === 'dark')
-      })()
-    </script>
-
     <!-- Icono -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -73,25 +63,10 @@ const previewImage = `${siteUrl}preview.jpg`; // cambia esto
       ]
     }
     </script>
-    <!-- <ClientRouter /> -->
+    <ClientRouter />
   </head>
   <body class="font-sans antialiased text-gray-900 dark:text-white">
     <slot />
-    <!-- Script toggle tema -->
-    <script>
-    function toggleTheme () {
-      const isDark = document.documentElement.classList.contains('dark')
-      const newTheme = isDark ? 'light' : 'dark'
-      document.documentElement.classList.toggle('dark', newTheme === 'dark')
-      localStorage.setItem('theme', newTheme)
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.theme-toggle').forEach(btn => {
-        btn.addEventListener('click', toggleTheme)
-      })
-    })
-    </script>
   </body>
 </html>
 
