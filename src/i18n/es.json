@@ -31,5 +31,34 @@
             "description": "Impulsa la visibilidad y el compromiso de tu marca con nuestras estrategias de marketing digital basadas en datos, que incluyen SEO, redes sociales y publicidad pagada."
         },
         "cta": "Saber más"
-    }
+    },
+    "cta_banner": {
+        "title": "Ahorra tiempo y dinero con contenido impulsado por IA",
+        "subtitle": "Contáctanos hoy para una consulta gratuita y descubre cómo podemos ayudar a tu negocio a prosperar en el mundo digital.",
+        "button": "Ponte en contacto"
+    },
+    "contact": {
+        "title": "Comencemos tu proyecto",
+        "subtitle": "¿Listo para transformar tu negocio con soluciones impulsadas por IA? Ponte en contacto con nosotros hoy mismo.",
+        "side_title": "Contáctanos",
+        "name_label": "Tu nombre",
+        "email_label": "Tu correo electrónico",
+        "service_label": "Selecciona un servicio",
+        "message_label": "Tu mensaje",
+        "email_placeholder": "tu_email@ejemplo.com",
+        "service_placeholder": "Elige un servicio",
+        "message_placeholder": "Cuéntanos sobre tu proyecto, objetivos y requisitos...",
+        "name_placeholder": "Introduce tu nombre",
+        "service_web": "Desarrollo web",
+        "service_ai": "Creación de contenido con IA",
+        "service_marketing": "Marketing digital",
+        "submit_button": "Enviar mensaje"
+    },
+    "about": {
+        "title": "Acerca de Costablanca AI Web Studio",
+        "text_1": "Fundada por expertos en innovación digital, Costablanca AI Web Studio combina inteligencia artificial de vanguardia con estrategias de marketing probadas para ofrecer resultados excepcionales a empresas de todos los tamaños.",
+        "text_2": "Nuestro equipo de desarrolladores, diseñadores y especialistas en marketing trabaja en conjunto para crear soluciones digitales integrales que impulsen el crecimiento y maximicen el ROI.",
+        "subtitle": "Nuestra Misión",
+        "text_3": "\"Combinamos tecnología + creatividad para hacer crecer tu negocio.\""
+  }
 }

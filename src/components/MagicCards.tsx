@@ -1,39 +1,36 @@
-/* eslint-disable no-undef */
 import { MagicCard } from '@components/magicui/magic-card'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { getI18N } from '../i18n/index.ts'
 export default function MagicCards ({ currentLocale }: {currentLocale: string}) {
   const t = getI18N({ currentLocale })
   const card1Ref = useRef<HTMLDivElement>(null)
   const card2Ref = useRef<HTMLDivElement>(null)
   const card3Ref = useRef<HTMLDivElement>(null)
-  useEffect(() => {
 
-  }, [])
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const buttons = document.querySelectorAll('#services button') as NodeListOf<HTMLButtonElement>
-    const images = document.querySelectorAll('#services img') as NodeListOf<HTMLImageElement>
+  // const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  //   const buttons = document.querySelectorAll('#services button') as NodeListOf<HTMLButtonElement>
+  //   const images = document.querySelectorAll('#services img') as NodeListOf<HTMLImageElement>
 
-    // Limpiar todos
-    buttons.forEach(btn => btn.style.viewTransitionName = '')
-    images.forEach(img => img.style.viewTransitionName = '')
+  //   // Limpiar todos
+  //   buttons.forEach(btn => btn.style.viewTransitionName = '')
+  //   images.forEach(img => img.style.viewTransitionName = '')
 
-    // Asignar solo al clickeado
-    e.currentTarget.style.viewTransitionName = 'button'
+  //   // Asignar solo al clickeado
+  //   e.currentTarget.style.viewTransitionName = 'button'
 
-    const cardClass = e.currentTarget.id
-    const cardRef = cardClass === 'card1' ? card1Ref : cardClass === 'card2' ? card2Ref : card3Ref
+  //   const cardClass = e.currentTarget.id
+  //   const cardRef = cardClass === 'card1' ? card1Ref : cardClass === 'card2' ? card2Ref : card3Ref
 
-    images.forEach(img => {
-      if (img.classList.contains(cardClass)) {
-        img.style.viewTransitionName = 'image'
-      }
-    })
+  //   images.forEach(img => {
+  //     if (img.classList.contains(cardClass)) {
+  //       img.style.viewTransitionName = 'image'
+  //     }
+  //   })
 
-    document.startViewTransition(() => {
-      cardRef.current?.classList.toggle('card_active')
-    })
-  }
+  //   document.startViewTransition(() => {
+  //     cardRef.current?.classList.toggle('card_active')
+  //   })
+  // }
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
       <div id='card1' ref={card1Ref}>
@@ -51,12 +48,9 @@ export default function MagicCards ({ currentLocale }: {currentLocale: string}) 
           <div className="p-5">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-text-primary">{t.services.web_design.title}</h5>
             <p className="mb-7 font-normal text-text-secondary">{t.services.web_design.description}</p>
-            <button id='card1' onClick={handleClick} className="button !inline-flex">
+            {/* <button id='card1' onClick={handleClick} className="button !inline-flex">
               {t.services.cta}
-              {/* <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-              </svg> */}
-            </button>
+            </button> */}
           </div>
         </MagicCard>
       </div>
@@ -74,12 +68,9 @@ export default function MagicCards ({ currentLocale }: {currentLocale: string}) 
 
             <p className="mb-7 font-normal text-text-secondary">{t.services.ai_media.description}</p>
             <div className="flex gap-4 justify-between items-center">
-              <button id='card2' onClick={handleClick} className="button !inline-flex">
+              {/* <button id='card2' onClick={handleClick} className="button !inline-flex">
                 {t.services.cta}
-                {/* <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                </svg> */}
-              </button>
+              </button> */}
               <div className="flex gap-2">
                 {/* <OpenAiIcon className={'w-6 h-6'} fill="currentColor" title="OpenAI" />
                 <GeminiIcon className={'w-6 h-6'} fill="currentColor" title="Google Gemini" />
@@ -101,12 +92,9 @@ export default function MagicCards ({ currentLocale }: {currentLocale: string}) 
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-text-primary">{t.services.marketing.title}</h5>
 
             <p className="mb-7 font-normal text-text-secondary">{t.services.marketing.description}</p>
-            <button id='card3' onClick={handleClick} className="!inline-flex button">
+            {/* <button id='card3' onClick={handleClick} className="!inline-flex button">
               {t.services.cta}
-              {/* <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-              </svg> */}
-            </button>
+            </button> */}
           </div>
         </MagicCard>
       </div>

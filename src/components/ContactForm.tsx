@@ -6,13 +6,15 @@ import {
   SelectTrigger,
   SelectValue
 } from '@components/ui/select'
+import { getI18N } from '../i18n/index.ts'
 
-export function ContactForm () {
+export function ContactForm ({ currentLocale }: {currentLocale: string}) {
+  const t = getI18N({ currentLocale })
   return (
     <form className="space-y-6">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          Full Name *
+          {t.contact.name_label} *
         </label>
         <input
           type="text"
@@ -20,13 +22,13 @@ export function ContactForm () {
           name="name"
           required
           className="w-full px-4 py-3 rounded-sm bg-accent-100 dark:bg-accent-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-200"
-          placeholder="Your full name"
+          placeholder={t.contact.name_placeholder}
         />
       </div>
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          Email Address *
+          {t.contact.email_label} *
         </label>
         <input
           type="email"
@@ -34,30 +36,30 @@ export function ContactForm () {
           name="email"
           required
           className="w-full px-4 py-3 rounded-sm bg-accent-100 dark:bg-accent-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-200"
-          placeholder="your.email@example.com"
+          placeholder={t.contact.email_placeholder}
         />
       </div>
 
       <div>
         <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          Service Interested In
+          {t.contact.service_label} *
         </label>
         <Select>
           <SelectTrigger className="w-full px-4 py-3 rounded-sm bg-accent-100 dark:bg-accent-900 text-gray-900 dark:text-[#b6bdc9] border-none h-12 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-200">
-            <SelectValue placeholder="Select a service" />
+            <SelectValue placeholder={t.contact.service_placeholder} />
           </SelectTrigger>
           <SelectContent className="bg-white dark:bg-accent-900 text-gray-900 dark:text-white border border-gray-300 dark:border-accent-700 rounded-md shadow-lg data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-out">
-            <SelectItem value="web-development">Web Development</SelectItem>
-            <SelectItem value="ai-content">AI Content Generation</SelectItem>
-            <SelectItem value="digital-marketing">Digital Marketing</SelectItem>
-            <SelectItem value="full-package">Complete Package</SelectItem>
+            <SelectItem value="web-development">{t.contact.service_web}</SelectItem>
+            <SelectItem value="ai-content">{t.contact.service_ai}</SelectItem>
+            <SelectItem value="digital-marketing">{t.contact.service_marketing}</SelectItem>
+            {/* <SelectItem value="full-package">Complete Package</SelectItem> */}
           </SelectContent>
         </Select>
       </div>
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          Project Details *
+          {t.contact.message_label} *
         </label>
         <textarea
           id="message"
@@ -65,12 +67,12 @@ export function ContactForm () {
           rows={5}
           required
           className="w-full px-4 py-3 rounded-sm bg-accent-100 dark:bg-accent-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 resize-none"
-          placeholder="Tell us about your project, goals, and requirements..."
+          placeholder={t.contact.message_placeholder}
         />
       </div>
       <div className="flex justify-end">
         <button type="submit" className="button">
-          Send Message
+          {t.contact.submit_button}
         </button>
       </div>
     </form>

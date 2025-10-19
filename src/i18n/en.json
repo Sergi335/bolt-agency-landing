@@ -31,5 +31,34 @@
       "description": "Boost your brand's visibility and engagement with our data-driven digital marketing strategies, including SEO, social media, and paid advertising."
     },
     "cta": "Read more"
+  },
+  "cta_banner": {
+    "title": "Save time and money with AI-powered content",
+    "subtitle": "Contact us today for a free consultation and discover how we can help your business thrive in the digital world.",
+    "button": "Get in Touch"
+  },
+  "contact": {
+    "title": "Let's Start Your Project",
+    "subtitle": "Ready to transform your business with AI-powered solutions? Get in touch with us today.",
+    "side_title": "Contact Us",
+    "name_label": "Your Name",
+    "email_label": "Your Email",
+    "service_label": "Select a service",
+    "message_label": "Your Message",
+    "email_placeholder": "your.email@example.com",
+    "service_placeholder": "Choose a service",
+    "message_placeholder": "Tell us about your project, goals, and requirements...",
+    "name_placeholder": "Enter your name",
+    "service_web": "Web Development",
+    "service_ai": "AI Content Creation",
+    "service_marketing": "Digital Marketing",
+    "submit_button": "Send Message"
+  },
+  "about": {
+    "title": "About Costablanca AI Web Studio",
+    "text_1": "Founded by digital innovation experts, Costablanca AI Web Studio combines cutting-edge artificial intelligence with proven marketing strategies to deliver exceptional results for businesses of all sizes.",
+    "text_2": "Our team of developers, designers, and marketing specialists work together to create comprehensive digital solutions that drive growth and maximize ROI.",
+    "subtitle": "Our Mission",
+    "text_3": "\"We combine technology + creativity to grow your business.\""
   }
 }
