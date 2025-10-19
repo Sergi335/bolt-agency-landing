@@ -124,4 +124,25 @@ const previewImage = `${siteUrl}preview.jpg`; // cambia esto
     }
   }
 </style>
+<script>
+  function handleHeaderBorder () {
+    const header = document.querySelector('header')
+    if (!header) return
 
+    if (window.scrollY > 0) {
+      header.classList.remove('border-b', 'border-gray-200', 'dark:border-gray-800')
+    } else {
+      header.classList.add('border-b', 'border-gray-200', 'dark:border-gray-800')
+    }
+  }
+
+  // Ejecutar en carga inicial
+  window.addEventListener('scroll', handleHeaderBorder)
+  handleHeaderBorder() // Ejecutar inmediatamente
+
+  // Ejecutar después de cada navegación con View Transitions
+  document.addEventListener('astro:page-load', () => {
+    window.addEventListener('scroll', handleHeaderBorder)
+    handleHeaderBorder()
+  })
+</script>
