@@ -1,8 +1,8 @@
 ---
-import { getEntry } from 'astro:content'
-import Layout from '@layouts/Layout.astro'
-import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
+import Header from '@components/Header.astro'
+import Layout from '@layouts/Layout.astro'
+import { getEntry } from 'astro:content'
 
 const { slug } = Astro.params
 
@@ -25,7 +25,7 @@ const { Content } = await entry.render();
       <nav class="mb-8">
         <a href="/" class="text-accent hover:underline">Inicio</a>
         <span class="text-text-secondary mx-2">/</span>
-        <a href="/#blog" class="text-accent hover:underline">Blog</a>
+        <a href="/blog" class="text-accent hover:underline">Blog</a>
         <span class="text-text-secondary mx-2">/</span>
         <span class="text-text-secondary">{entry.data.title}</span>
       </nav>
@@ -36,7 +36,7 @@ const { Content } = await entry.render();
           {entry.data.title}
         </h1>
         <div class="flex items-center gap-4 text-text-secondary mb-6">
-          <time datetime={entry.data.date}>{entry.data.date}</time>
+          <time datetime={entry.data.date.toDateString()}>{entry.data.date.toLocaleDateString()}</time>
         </div>
         <p class="text-xl text-text-secondary leading-relaxed">
           {entry.data.description}

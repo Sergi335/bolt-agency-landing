@@ -1,0 +1,67 @@
+---
+import Header from '@components/Header.astro'
+import Layout from '@layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+// import { getI18N } from '../i18n/index.ts'
+
+// const currentLocale = Astro.locals.currentLocale ?? 'en'
+// const t = getI18N({ currentLocale })
+
+// Obtener todos los posts y ordenarlos por fecha
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+)
+---
+
+<Layout title="Blog" description="Nuestro blog">
+  <Header/>
+  <main class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-12 text-text-primary">
+      Blog
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {posts.map((post) => (
+        <article class="bg-white dark:bg-accent-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+          {post.data.image && (
+            <img
+              src={post.data.image}
+              alt={post.data.title}
+              class="w-full h-48 object-cover"
+            />
+          )}
+
+          <div class="p-6">
+            <time class="text-sm text-text-secondary">
+              {post.data.date.toLocaleDateString('es-ES', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+
+            <h2 class="text-2xl font-bold mt-2 mb-3 text-text-primary">
+              <a href={`/blog/${post.slug}`} class="hover:text-accent">
+                {post.data.title}
+              </a>
+            </h2>
+
+            <p class="text-text-secondary mb-4">
+              {post.data.description}
+            </p>
+
+            {/* {post.data.tags && (
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.map((tag) => (
+                  <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )} */}
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+</Layout>

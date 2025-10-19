@@ -1,7 +1,7 @@
 ---
 title: "Creando Imágenes de Producto Impactantes con IA"
 description: "Aprende cómo aprovechar las herramientas de IA para generar fotografía de producto profesional que convierte visitantes en clientes."
-date: "8 de enero de 2025"
+date: 2025-01-08
 image: "/img5.png"
 ---
 

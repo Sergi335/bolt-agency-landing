@@ -1,6 +1,6 @@
 ---
 import '../layouts/index.css'
-import { ClientRouter } from 'astro:transitions'
+// import { ClientRouter } from 'astro:transitions'
 const { currentLocale, title, description } = Astro.props
 
 // Valores por defecto si no pasas props
@@ -73,7 +73,7 @@ const previewImage = `${siteUrl}preview.jpg`; // cambia esto
       ]
     }
     </script>
-    <ClientRouter />
+    <!-- <ClientRouter /> -->
   </head>
   <body class="font-sans antialiased text-gray-900 dark:text-white">
     <slot />

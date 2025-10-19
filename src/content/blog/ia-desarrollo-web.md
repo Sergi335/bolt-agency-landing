@@ -1,7 +1,7 @@
 ---
 title: "El Futuro de la IA en el Desarrollo Web"
 description: "Explora cómo la inteligencia artificial está revolucionando la forma en que construimos y diseñamos sitios web en 2025."
-date: "15 de enero de 2025"
+date: 2025-01-15
 image: "/at-work.jpg"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Tendencias de Marketing Digital para Pequeñas Empresas"
 description: "Descubre las estrategias de marketing más efectivas que las pequeñas empresas pueden implementar para crecer su presencia online."
-date: "12 de enero de 2025"
+date: 2025-01-12
 image: "/2021/design_1.png"
 ---
 
