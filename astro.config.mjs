@@ -13,9 +13,7 @@ export default defineConfig({
   i18n: {
     locales: ['es', 'en'],
     defaultLocale: 'es',
-    routing: {
-      prefixDefaultLocale: false
-    }
+    routing: 'manual'
   },
 
   site: import.meta.env.PUBLIC_SITE_URL || 'http://localhost:4321',

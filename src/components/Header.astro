@@ -5,9 +5,8 @@ import MoonIcon from './icons/MoonIcon.astro'
 import BurguerMenuIcon from './icons/BurguerMenuIcon.astro'
 import Logo from './icons/logo.astro'
 
-const { currentLocale } = Astro
-
-const t = getI18N({ currentLocale });
+const locale = Astro.locals.currentLocale || 'en'
+const t = getI18N({ currentLocale: locale });
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-primary">
@@ -36,10 +35,10 @@ const t = getI18N({ currentLocale });
       <!-- Theme Toggle & Language Selector -->
       <div class="hidden md:flex flex-1 justify-end">
         <div class="flex items-center gap-4">
-          <select name="language" class="language-selector bg-primary text-text-secondary font-medium rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-accent cursor-pointer" value={currentLocale}>
+          <!-- <select name="language" class="language-selector bg-primary text-text-secondary font-medium rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-accent cursor-pointer" value={currentLocale}>
             <option value="en" selected={currentLocale === 'en'}>English</option>
             <option value="es" selected={currentLocale === 'es'}>Español</option>
-          </select>
+          </select> -->
           <button onclick="toggleTheme()" class="theme-toggle p-2 rounded group">
             <MoonIcon />
             <SunIcon />
@@ -100,15 +99,15 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 })
-const selectLanguage = document.querySelector('.language-selector')
-selectLanguage?.addEventListener('change', (e) => {
-  const selectedLang = (e.target as HTMLSelectElement).value
-  const currentPath = window.location.pathname
-  const newPath = `/${selectedLang}${currentPath.substring(3)}`
-  if (newPath === '/es') {
-    window.location.href = '/'
-  } else {
-    window.location.href = newPath
-  }
-})
+// const selectLanguage = document.querySelector('.language-selector')
+// selectLanguage?.addEventListener('change', (e) => {
+//   const selectedLang = (e.target as HTMLSelectElement).value
+//   const currentPath = window.location.pathname
+//   const newPath = `/${selectedLang}${currentPath.substring(3)}`
+//   if (newPath === '/es') {
+//     window.location.href = '/'
+//   } else {
+//     window.location.href = newPath
+//   }
+// })
 </script>
