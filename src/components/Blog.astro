@@ -1,4 +1,12 @@
 ---
+import { getCollection } from 'astro:content'
+
+const blogPosts = await getCollection('blog')
+// Sort by date (newest first)
+const sortedPosts = blogPosts.sort((a, b) => {
+  // Simple date comparison - you might want to use a proper date library
+  return b.data.date.localeCompare(a.data.date)
+});
 ---
 
 <section id="blog" class="py-section bg-white dark:bg-primary transition-colors duration-300">
@@ -15,74 +23,29 @@
 
     <!-- Blog Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Blog Post 1 -->
-      <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-700">
-        <a href="/blog/ia-desarrollo-web">
-          <div class="h-48 bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center">
-            <img src="./at-work.jpg" alt="El Futuro de la IA en el Desarrollo Web" class="w-full h-full object-cover">
-          </div>
-        </a>
-        <div class="p-6">
-          <div class="flex items-center mb-3">
-            <span class="text-sm text-gray-500 dark:text-gray-400">15 de enero de 2025</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-            El Futuro de la IA en el Desarrollo Web
-          </h3>
-          <p class="text-gray-600 dark:text-secondary mb-4">
-            Explora cómo la inteligencia artificial está revolucionando la forma en que construimos y diseñamos sitios web en 2025.
-          </p>
-          <a href="/blog/ia-desarrollo-web" class="text-accent font-medium transition-colors duration-200 hover:underline">
-            Leer más →
+      {sortedPosts.map((post) => (
+        <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-700">
+          <a href={`/blog/${post.slug}`}>
+            <div class="h-48 bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center">
+              <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover">
+            </div>
           </a>
-        </div>
-      </article>
-
-      <!-- Blog Post 2 -->
-      <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-700">
-        <a href="/blog/marketing-digital-pymes">
-          <div class="h-48 bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center">
-            <img class="w-full h-full object-cover" src="./2021/design_1.png" alt="Tendencias de Marketing Digital para Pequeñas Empresas">
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <span class="text-sm text-gray-500 dark:text-gray-400">{post.data.date}</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              {post.data.title}
+            </h3>
+            <p class="text-gray-600 dark:text-secondary mb-4">
+              {post.data.description}
+            </p>
+            <a href={`/blog/${post.slug}`} class="text-accent font-medium transition-colors duration-200 hover:underline">
+              Leer más →
+            </a>
           </div>
-        </a>
-        <div class="p-6">
-          <div class="flex items-center mb-3">
-            <span class="text-sm text-gray-500 dark:text-gray-400">12 de enero de 2025</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-            Tendencias de Marketing Digital para Pequeñas Empresas
-          </h3>
-          <p class="text-gray-600 dark:text-secondary mb-4">
-            Descubre las estrategias de marketing más efectivas que las pequeñas empresas pueden implementar para crecer su presencia online.
-          </p>
-          <a href="/blog/marketing-digital-pymes" class="text-accent font-medium transition-colors duration-200 hover:underline">
-            Leer más →
-          </a>
-        </div>
-      </article>
-
-      <!-- Blog Post 3 -->
-      <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-700">
-        <a href="/blog/imagenes-producto-ia">
-          <div class="h-48 bg-gradient-to-br from-primary-400 to-orange-500 flex items-center justify-center">
-            <img class="w-full h-full object-cover" src="./img5.png" alt="Creando Imágenes de Producto Impactantes con IA">
-          </div>
-        </a>
-        <div class="p-6">
-          <div class="flex items-center mb-3">
-            <span class="text-sm text-gray-500 dark:text-gray-400">8 de enero de 2025</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-            Creando Imágenes de Producto Impactantes con IA
-          </h3>
-          <p class="text-gray-600 dark:text-secondary mb-4">
-            Aprende cómo aprovechar las herramientas de IA para generar fotografía de producto profesional que convierte visitantes en clientes.
-          </p>
-          <a href="/blog/imagenes-producto-ia" class="text-accent font-medium transition-colors duration-200 hover:underline">
-            Leer más →
-          </a>
-        </div>
-      </article>
+        </article>
+      ))}
     </div>
   </div>
 </section>

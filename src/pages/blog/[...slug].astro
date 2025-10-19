@@ -1,19 +1,23 @@
 ---
-import Layout from './Layout.astro'
+import { getEntry } from 'astro:content'
+import Layout from '@layouts/Layout.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 
-interface Props {
-  title: string
-  date: string
-  description: string
-  image: string
+const { slug } = Astro.params
+
+// Get the entry from the content collection
+const entry = await getEntry('blog', slug as string)
+
+// If entry doesn't exist, return 404
+if (!entry) {
+  return Astro.redirect('/404')
 }
 
-const { title, date, description, image } = Astro.props
+const { Content } = await entry.render();
 ---
 
-<Layout title={title}>
+<Layout title={entry.data.title}>
   <Header />
   <main class="pt-24 pb-16 bg-white dark:bg-primary transition-colors duration-300">
     <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,34 +27,34 @@ const { title, date, description, image } = Astro.props
         <span class="text-text-secondary mx-2">/</span>
         <a href="/#blog" class="text-accent hover:underline">Blog</a>
         <span class="text-text-secondary mx-2">/</span>
-        <span class="text-text-secondary">{title}</span>
+        <span class="text-text-secondary">{entry.data.title}</span>
       </nav>
 
       <!-- Article Header -->
       <header class="mb-8">
         <h1 class="text-4xl sm:text-5xl font-bold text-text-primary mb-4">
-          {title}
+          {entry.data.title}
         </h1>
         <div class="flex items-center gap-4 text-text-secondary mb-6">
-          <time datetime={date}>{date}</time>
+          <time datetime={entry.data.date}>{entry.data.date}</time>
         </div>
         <p class="text-xl text-text-secondary leading-relaxed">
-          {description}
+          {entry.data.description}
         </p>
       </header>
 
       <!-- Featured Image -->
       <div class="mb-12 rounded-2xl overflow-hidden">
         <img
-          src={image}
-          alt={title}
+          src={entry.data.image}
+          alt={entry.data.title}
           class="w-full h-auto object-cover"
         />
       </div>
 
       <!-- Article Content -->
       <div class="prose prose-lg dark:prose-invert max-w-none">
-        <slot />
+        <Content />
       </div>
 
       <!-- Back to Blog -->
