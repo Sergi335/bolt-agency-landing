@@ -10,22 +10,24 @@ const t = getI18N({ currentLocale: locale });
     <h2 class="text-3xl sm:text-4xl font-bold text-text-primary mb-6 text-center">
       {t.about.title}
     </h2>
-    <p class="text-lg text-text-secondary mb-6 leading-relaxed text-balance text-center">
+    <p class="text-lg text-text-secondary mb-16 leading-relaxed text-balance text-center">
       {t.about.text_1}
     </p>
-    <div class="flex flex-col lg:flex-row items-center max-w-3xl mx-auto">
+    <div class="flex flex-col lg:flex-row items-center max-w-5xl mx-auto px-8">
       <div class="flex flex-col justify-start items-center flex-1">
-        <p class="text-lg text-text-secondary mb-8 leading-relaxed text-balance text-left w-full">
+        <h3 class="px-2 text-xl font-semibold text-text-primary mb-3 text-left w-full">{t.about.subtitle}</h3>
+        <p class="px-2 text-lg text-text-secondary mb-8 leading-relaxed text-balance text-left w-full">
           {t.about.text_2}
         </p>
-        <h3 class="text-xl font-semibold text-text-primary mb-3 text-left w-full">{t.about.subtitle}</h3>
-        <p class="text-text-secondary italic text-left w-full">
-          {t.about.text_3}
-        </p>
-        <p class="font-semibold text-gray-900 dark:text-white text-left w-full">Sergio Sánchez</p>
-        <p class="text-text-secondary text-left w-full">Founder & CEO</p>
+        <div class="p-2 pr-4 bg-[#ccfbf16b] dark:bg-[#0217169c] rounded-lg border dark:border-[#232323] flex flex-col items-start justify-start mr-auto">
+          <p class="text-text-secondary italic text-left w-full mb-2">
+            {t.about.text_3}
+          </p>
+          <p class="font-semibold text-text-primary text-left w-full pl-2">Sergio Sánchez</p>
+          <p class="text-text-secondary text-left w-full pl-2 text-sm">Founder & CEO</p>
+        </div>
       </div>
-      <div id="about-avatar" class="flex flex-col items-center justify-center flex-1">
+      <div id="about-avatar" class="flex flex-col items-center justify-center">
         <img class="max-w-[300px] filter grayscale" src="/public/sergio.webp" alt="">
       </div>
     </div>
