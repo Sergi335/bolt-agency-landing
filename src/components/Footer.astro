@@ -1,4 +1,8 @@
 ---
+import { getI18N } from '../i18n/index.ts'
+
+const locale = Astro.locals.currentLocale || 'es'
+const t = getI18N({ currentLocale: locale })
 ---
 
 <footer class="bg-gray-900 dark:bg-black text-white py-16 transition-colors duration-300 border-t border-gray-100 dark:border-gray-800">
@@ -6,9 +10,9 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Company Info -->
       <div>
-        <h3 class="text-2xl font-bold mb-4">AI Web Studio</h3>
+        <h3 class="text-2xl font-bold mb-4">Costablanca</h3>
         <p class="text-gray-300 mb-6">
-          We combine technology + creativity to grow your business with AI-powered web solutions.
+          {t.footer.mission}
         </p>
         <div class="flex space-x-4">
           <a href="#" class="w-10 h-10 bg-gray-700 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors duration-200">
@@ -36,51 +40,51 @@
 
       <!-- Services -->
       <div>
-        <h4 class="text-lg font-semibold mb-4">Services</h4>
+        <h4 class="text-lg font-semibold mb-4">{t.footer.header.services}</h4>
         <ul class="space-y-2">
-          <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">Web Development</a></li>
-          <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">AI Content Generation</a></li>
-          <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">Digital Marketing</a></li>
-          <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">E-commerce Solutions</a></li>
-          <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">SEO Optimization</a></li>
+          <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">{t.footer.web_development}</a></li>
+          <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">{t.footer.ai_content_generation}</a></li>
+          <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">{t.footer.digital_marketing}</a></li>
+          <!-- <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">E-commerce Solutions</a></li>
+          <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">SEO Optimization</a></li> -->
         </ul>
       </div>
 
       <!-- Company -->
       <div>
-        <h4 class="text-lg font-semibold mb-4">Company</h4>
+        <h4 class="text-lg font-semibold mb-4">{t.footer.header.company}</h4>
         <ul class="space-y-2">
-          <li><a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
-          <li><a href="#portfolio" class="text-gray-300 hover:text-white transition-colors duration-200">Portfolio</a></li>
-          <li><a href="#blog" class="text-gray-300 hover:text-white transition-colors duration-200">Blog</a></li>
-          <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Careers</a></li>
-          <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a></li>
+          <li><a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">{t.footer.about_us}</a></li>
+          <!-- <li><a href="#portfolio" class="text-gray-300 hover:text-white transition-colors duration-200">Portfolio</a></li> -->
+          <li><a href="#blog" class="text-gray-300 hover:text-white transition-colors duration-200">{t.footer.blog}</a></li>
+          <!-- <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Careers</a></li> -->
+          <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">{t.footer.contact}</a></li>
         </ul>
       </div>
 
       <!-- Resources -->
       <div>
-        <h4 class="text-lg font-semibold mb-4">Resources</h4>
+        <h4 class="text-lg font-semibold mb-4">{t.footer.header.resources}</h4>
         <ul class="space-y-2">
-          <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
-          <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Terms of Service</a></li>
-          <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Support Center</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">{t.footer.privacy_policy}</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">{t.footer.terms_of_service}</a></li>
+          <!-- <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Support Center</a></li>
           <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Documentation</a></li>
-          <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Get a Quote</a></li>
+          <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Get a Quote</a></li> -->
         </ul>
       </div>
     </div>
 
     <!-- Bottom Section -->
     <div class="border-t border-gray-700 dark:border-gray-800 pt-8 mt-12">
-      <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="flex flex-col md:flex-row justify-center items-center">
         <p class="text-gray-300 text-sm">
-          © 2025 AI Web Studio. All rights reserved.
+          {t.footer.copy}
         </p>
         <div class="mt-4 md:mt-0">
-          <p class="text-gray-300 text-sm">
+          <!-- <p class="text-gray-300 text-sm">
             Made with ❤️ using AI and creativity
-          </p>
+          </p> -->
         </div>
       </div>
     </div>

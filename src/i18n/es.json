@@ -60,5 +60,27 @@
         "text_2": "Nuestro equipo de desarrolladores, diseñadores y especialistas en marketing trabaja en conjunto para crear soluciones digitales integrales que impulsen el crecimiento y maximicen el ROI.",
         "subtitle": "Nuestra Misión",
         "text_3": "\"Combinamos tecnología + creatividad para hacer crecer tu negocio.\""
-  }
+    },
+    "blog": {
+        "title": "Últimos artículos",
+        "subtitle": "Mantente actualizado con las últimas tendencias en desarrollo web, IA y marketing digital.",
+        "read_more": "Leer más"
+    },
+    "footer": {
+        "header": {
+            "services": "Servicios",
+            "company": "Compañía",
+            "resources": "Recursos"
+        },
+        "mission": "Combinamos tecnología + creatividad para hacer crecer tu negocio con soluciones web impulsadas por IA.",
+        "web_development": "Desarrollo Web",
+        "ai_content_generation": "Generación de Contenido con IA",
+        "digital_marketing": "Marketing Digital",
+        "about_us": "Acerca de Nosotros",
+        "blog": "Blog",
+        "contact": "Contacto",
+        "privacy_policy": "Política de Privacidad",
+        "terms_of_service": "Términos de Servicio",
+        "copy": "© 2025 Costablanca AI Web Studio. Todos los derechos reservados."
+    }
 }

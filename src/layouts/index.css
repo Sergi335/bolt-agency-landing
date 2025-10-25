@@ -20,7 +20,7 @@
     --magic-border: var(--chakra-colors-teal-50);
     --magic-gradient: var(--chakra-colors-teal-100);
 
-    --section-spacing: 8rem;
+    --section-spacing: 16rem;
 
     --color-base: hsl(0, 0%, 100%);
     --color-secondary: var(--chakra-colors-teal-100);

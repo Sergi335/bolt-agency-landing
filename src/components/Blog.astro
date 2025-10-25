@@ -1,5 +1,9 @@
 ---
 import { getCollection } from 'astro:content'
+import { getI18N } from '../i18n/index.ts'
+
+const locale = Astro.locals.currentLocale || 'es'
+const t = getI18N({ currentLocale: locale })
 
 const blogPosts = await getCollection('blog')
 
@@ -14,36 +18,37 @@ const sortedPosts = blogPosts.sort(
     <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
-        Últimos Artículos
+        {t.blog.title}
       </h2>
       <p class="text-xl text-text-secondary max-w-3xl mx-auto">
-        Mantente actualizado con las últimas tendencias en desarrollo web, IA y marketing digital
+        {t.blog.subtitle}
       </p>
     </div>
 
     <!-- Blog Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {sortedPosts.map((post) => (
-        <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-700">
+        <article class="bg-primary rounded-lg overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-800">
           <a href={`/blog/${post.slug}`}>
             <div class="h-48 bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center">
               <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover">
             </div>
-          </a>
-          <div class="p-6">
-            <div class="flex items-center mb-3">
-              <span class="text-sm text-gray-500 dark:text-gray-400">{post.data.date.toLocaleDateString()}</span>
+
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="text-sm text-gray-500 dark:text-gray-400">{post.data.date.toLocaleDateString()}</span>
+              </div>
+              <h3 class="text-xl font-semibold text-text-primary mb-3">
+                {post.data.title}
+              </h3>
+              <p class="text-text-secondary mb-4">
+                {post.data.description}
+              </p>
+              <p class="text-accent font-medium transition-colors duration-200 hover:underline">
+                {t.blog.read_more}
+              </p>
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-              {post.data.title}
-            </h3>
-            <p class="text-gray-600 dark:text-secondary mb-4">
-              {post.data.description}
-            </p>
-            <a href={`/blog/${post.slug}`} class="text-accent font-medium transition-colors duration-200 hover:underline">
-              Leer más →
-            </a>
-          </div>
+          </a>
         </article>
       ))}
     </div>
@@ -62,10 +67,5 @@ const sortedPosts = blogPosts.sort(
     animation-range: entry 20% cover 30%;
     transition: transform 0.3s;
     cursor: pointer;
-  }
-
-  article:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s;
   }
 </style>
