@@ -2,7 +2,7 @@
 title: "Creando Imágenes de Producto Impactantes con IA"
 description: "Aprende cómo aprovechar las herramientas de IA para generar fotografía de producto profesional que convierte visitantes en clientes."
 date: 2025-01-08
-image: "/img5.png"
+image: "/img5.jpg"
 ---
 
 La fotografía de producto es uno de los elementos más importantes en el comercio electrónico. Un estudio reciente reveló que el 93% de los consumidores consideran la apariencia visual como el factor decisivo en una compra. Sin embargo, la fotografía profesional tradicional puede ser costosa y consumir mucho tiempo. Aquí es donde la inteligencia artificial está cambiando el juego.

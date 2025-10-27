@@ -2,7 +2,7 @@
 title: "Tendencias de Marketing Digital para Pequeñas Empresas"
 description: "Descubre las estrategias de marketing más efectivas que las pequeñas empresas pueden implementar para crecer su presencia online."
 date: 2025-01-12
-image: "/2021/design_1.png"
+image: "/design_1.jpg"
 ---
 
 El marketing digital ha evolucionado drásticamente en los últimos años, y las pequeñas empresas ahora tienen acceso a herramientas y estrategias que antes solo estaban disponibles para grandes corporaciones. En 2025, el panorama del marketing digital ofrece oportunidades sin precedentes para las pymes que están dispuestas a invertir tiempo y recursos de manera inteligente.

@@ -29,7 +29,14 @@ const t = getI18N({ currentLocale: locale })
     animation-timeline: view();
     animation-range: entry 20% cover 30%;
   }
-  #cta {
+  html.dark #cta {
     background-image: linear-gradient(180deg, hsl(0deg 0% 0%) 0%, rgba(237, 221, 83, 0) 30%), linear-gradient(0deg, hsl(0deg 0% 0%) 0%, rgb(255 255 255 / 0%) 35%), url(backgrounds/bg-main-dark-1440w.jpg);
+    background-position: inherit;
+    background-size: cover;
+  }
+  #cta {
+    background-image: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, rgb(255 255 255 / 0%) 81%), linear-gradient(0deg, hsl(0, 0%, 100%) 0%, rgb(255 255 255 / 0%) 35%), url(backgrounds/bg-main-light-1440w.jpg);
+    background-position: inherit;
+    background-size: cover;
   }
 </style>

@@ -37,7 +37,7 @@ export default function MagicCards ({ currentLocale }: {currentLocale: string}) 
         <MagicCard gradientColor={'var(--magic-gradient)'} className="p-[1px] rounded-lg bg-primary">
           <div className='flex'>
             <div className='flex-1'>
-              <img className="card1 rounded-t-lg object-cover aspect-video w-full" src="/img2.png" alt="" />
+              <img className="card1 rounded-t-lg object-cover aspect-video w-full" src="/img2.jpg" alt="" />
             </div>
             <div className="flex-col gallery hidden gap-2 p-2">
               <img className='max-w-80' src="/img4.png" alt="Random Image" />
@@ -85,7 +85,7 @@ export default function MagicCards ({ currentLocale }: {currentLocale: string}) 
       <div id='card3' ref={card3Ref}>
         <MagicCard gradientColor={'var(--magic-gradient)'} className="p-[1px] rounded-lg bg-primary">
 
-          <img className="card3 rounded-t-lg object-cover aspect-video w-full" src="/img3.png" alt="" />
+          <img fetchPriority='high' className="card3 rounded-t-lg object-cover aspect-video w-full" src="/img3.webp" alt="" />
 
           <div className="p-5">
 

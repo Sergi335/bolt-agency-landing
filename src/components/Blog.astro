@@ -31,7 +31,7 @@ const sortedPosts = blogPosts.sort(
         <article class="bg-primary rounded-lg overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-800">
           <a href={`/blog/${post.slug}`}>
             <div class="h-48 bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center">
-              <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover">
+              <img loading="lazy" src={post.data.image} alt={post.data.title} class="w-full h-full object-cover">
             </div>
 
             <div class="p-6">
