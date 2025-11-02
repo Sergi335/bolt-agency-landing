@@ -64,40 +64,58 @@ const t = getI18N({ currentLocale: locale });
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+function setupButtonBackdrop () {
   const buttons = document.querySelectorAll('.button_transparent')
   const backdrop = document.querySelector('.button_backdrop') as HTMLElement
-  const { left, top, width, height } = buttons[0].getBoundingClientRect()
+
+  if (!buttons.length || !backdrop) return
+
+  const { left, top, width, height } = (buttons[0] as HTMLElement).getBoundingClientRect()
   backdrop.style.setProperty('--left', `${left}px`)
   backdrop.style.setProperty('--top', `${top}px`)
   backdrop.style.setProperty('--width', `${width}px`)
   backdrop.style.setProperty('--height', `${height}px`)
-  buttons[0].classList.add('active')
+
+  // Limpiar clases active previas
+  buttons.forEach(btn => btn.classList.remove('active'));
+  (buttons[0] as HTMLElement).classList.add('active')
+
   buttons.forEach(button => {
     button.addEventListener('mouseenter', () => {
-      const { left, top, width, height } = button.getBoundingClientRect()
+      const { left, top, width, height } = (button as HTMLElement).getBoundingClientRect()
       backdrop.style.setProperty('--left', `${left}px`)
       backdrop.style.setProperty('--top', `${top}px`)
       backdrop.style.setProperty('--width', `${width}px`)
       backdrop.style.setProperty('--height', `${height}px`)
+
       buttons.forEach(btn => {
         if (btn !== button) btn.classList.remove('active')
       })
       button.classList.add('active')
     })
   })
+}
+
+function setupResize () {
   window.addEventListener('resize', () => {
     const buttons = document.querySelectorAll('.button_transparent')
     const backdrop = document.querySelector('.button_backdrop') as HTMLElement
+
     if (buttons.length && backdrop) {
-    // Puedes elegir el botón activo, aquí usamos el primero como referencia
-      const { left, top, width, height } = buttons[0].getBoundingClientRect()
+      // Encontrar el botón activo o usar el primero
+      const activeButton = Array.from(buttons).find(btn => btn.classList.contains('active')) || buttons[0]
+      const { left, top, width, height } = (activeButton as HTMLElement).getBoundingClientRect()
       backdrop.style.setProperty('--left', `${left}px`)
       backdrop.style.setProperty('--top', `${top}px`)
       backdrop.style.setProperty('--width', `${width}px`)
       backdrop.style.setProperty('--height', `${height}px`)
-      buttons[0].classList.add('active')
     }
   })
+}
+
+// Ejecutar en carga inicial Y después de cada navegación
+document.addEventListener('astro:page-load', () => {
+  setupButtonBackdrop()
+  setupResize()
 })
 </script>
